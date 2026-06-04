@@ -426,9 +426,11 @@ figure video {
 }
 .gallery-tab img {
   display: block;
-  width: 76px;
-  height: auto;
+  width: 88px;
+  height: 56px;            /* fixed box -> uniform size & ratio for every thumbnail */
+  object-fit: cover;        /* crop to fill the box instead of keeping native ratio */
   border-radius: 5px;
+  background: var(--ai2-cream-2);
 }
 .gallery-tab:hover { transform: scale(1.1); }
 .gallery-tab.active { background: rgba(26, 160, 107, 0.28); }
