@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="stylesheet" href="styles.css?v=22" />
 </head>
 <body>
 
@@ -32,6 +32,7 @@
           <a href="#">Max Argus</a><sup>1</sup>,
           <a href="#">Rustin Soraki</a><sup>1,2</sup>,
           <a href="#">Winson Han</a><sup>1</sup>,
+          <a href="#">Taira Anderson</a><sup>1</sup>,
           <a href="#">Chun-Liang Li</a><sup>2</sup>,
           <a href="#">Shuo Liu</a><sup>2</sup>,
           <a href="#">Jiafei Duan</a><sup>1,2</sup>
@@ -152,7 +153,7 @@
     </p>
 
     <div class="gallery" id="gallery-trainingdata"></div>
-    <figcaption style="margin-top:-8px;">
+    <figcaption style="margin-top:26px;">
       Example MolmoMotion-1M training samples: object-grounded 3D point trajectories extracted
       from unconstrained video by our pipeline.
     </figcaption>
@@ -178,7 +179,7 @@
       motion, a direct quantitative test rather than whether a track merely looks plausible.
     </p>
     <figure class="full">
-      <img src="images/results_forecasting.png" alt="3D motion forecasting results on PointMotionBench" />
+      <img src="images/results_forecasting.png?v=2" alt="3D motion forecasting results on PointMotionBench" />
       <figcaption>
         On PointMotionBench, MolmoMotion beats pixel-space video generators, parametric-3D
         methods, and constant-velocity extrapolation. Bars show 3D average displacement error
@@ -227,23 +228,41 @@
           { label: "A silver car follows the road and slowly turns to the right", src: "images/forecast_car.mp4", thumb: "images/thumbs/forecast_car.jpg", zoom: 1.8 },
           { label: "A flamingo dips its beak into the water while walking to the right", src: "images/forecast_flamingo.mp4", thumb: "images/thumbs/forecast_flamingo.jpg" },
           { label: "Slide the black keyboard toward the person", src: "images/forecast_keyboard.mp4", thumb: "images/thumbs/forecast_keyboard.jpg" },
-          { label: "Put yellow toy in blue bowl", src: "images/forecast_picknplace.mp4", thumb: "images/thumbs/forecast_picknplace.jpg" }
+          { label: "Put yellow toy in blue bowl", src: "images/forecast_picknplace.mp4", thumb: "images/thumbs/forecast_picknplace.jpg" },
+          { label: "A BMX rider rides through the trees", src: "images/forecast_bmx.mp4", thumb: "images/thumbs/forecast_bmx.jpg" },
+          { label: "Put white ball on white 3D printed base", src: "images/forecast_furniture.mp4", thumb: "images/thumbs/forecast_furniture.jpg" },
+          { label: "Pour water from yellow cup into gray container", src: "images/forecast_scoop.mp4", thumb: "images/thumbs/forecast_scoop.jpg" },
+          { label: "Stack blue plastic plate and green plastic plate together", src: "images/forecast_stack.mp4", thumb: "images/thumbs/forecast_stack.jpg" }
         ]
       },
       "gallery-trainingdata": {
-        type: "single",
+        type: "pair",
         items: [
-          { label: "A camel walks to the right and then walks back", src: "images/gt_camel.mp4", thumb: "images/thumbs/gt_camel.jpg" },
-          { label: "Pour liquid from silver water bottle into brown cup", src: "images/gt_bottle.mp4", thumb: "images/thumbs/gt_bottle.jpg" }
+          { label: "Put orange toy in blue bowl", thumb: "images/thumbs/td_01.jpg?v=8", rgb: "images/td_01_rgb.mp4?v=8", track: "images/td_01_track.mp4?v=8" },
+          { label: "Pour liquid from silver water bottle into brown cup", thumb: "images/thumbs/td_02.jpg?v=8", rgb: "images/td_02_rgb.mp4?v=8", track: "images/td_02_track.mp4?v=8" },
+          { label: "Pour the soy sauce into the pan with the right hand", thumb: "images/thumbs/td_03.jpg?v=8", rgb: "images/td_03_rgb.mp4?v=8", track: "images/td_03_track.mp4?v=8" },
+          { label: "Scrub the frying pan with the cleaning sponge in my right hand", thumb: "images/thumbs/td_04.jpg?v=8", rgb: "images/td_04_rgb.mp4?v=8", track: "images/td_04_track.mp4?v=8" },
+          { label: "Move tool to bowl", thumb: "images/thumbs/td_05.jpg?v=8", rgb: "images/td_05_rgb.mp4?v=8", track: "images/td_05_track.mp4?v=8" },
+          { label: "Put toy in black bowl", thumb: "images/thumbs/td_06.jpg?v=8", rgb: "images/td_06_rgb.mp4?v=8", track: "images/td_06_track.mp4?v=8" },
+          { label: "Pick up the white candle and place it on the metal tray", thumb: "images/thumbs/td_07.jpg?v=8", rgb: "images/td_07_rgb.mp4?v=8", track: "images/td_07_track.mp4?v=8" },
+          { label: "Pick up the white ceramic mug and place it in the coconut bowl", thumb: "images/thumbs/td_08.jpg?v=8", rgb: "images/td_08_rgb.mp4?v=8", track: "images/td_08_track.mp4?v=8" },
+          { label: "A blue parrot stands on a person's hand and moves", thumb: "images/thumbs/td_09.jpg?v=8", rgb: "images/td_09_rgb.mp4?v=8", track: "images/td_09_track.mp4?v=8" },
+          { label: "A black cat walks to the right", thumb: "images/thumbs/td_10.jpg?v=8", rgb: "images/td_10_rgb.mp4?v=8", track: "images/td_10_track.mp4?v=8" }
         ]
       },
       "gallery-robotics": {
         type: "single",
         items: [
-          { label: "Take cloth out of container", src: "images/droid_towel.mp4", thumb: "images/thumbs/droid_towel.jpg" },
-          { label: "Move lid on pot", src: "images/droid_potlid.mp4", thumb: "images/thumbs/droid_potlid.jpg" },
-          { label: "Hang the cloth", src: "images/droid_hangcloth.mp4", thumb: "images/thumbs/droid_hangcloth.jpg" },
-          { label: "Move white object into container", src: "images/droid_picktoy.mp4", thumb: "images/thumbs/droid_picktoy.jpg" }
+          { label: "Move object to container", src: "images/droid_01.mp4", thumb: "images/thumbs/droid_01.jpg" },
+          { label: "Move block to the black bowl", src: "images/droid_02.mp4", thumb: "images/thumbs/droid_02.jpg" },
+          { label: "Put toy in black bowl", src: "images/droid_03.mp4", thumb: "images/thumbs/droid_03.jpg" },
+          { label: "Take cloth out of container", src: "images/droid_04.mp4", thumb: "images/thumbs/droid_04.jpg" },
+          { label: "Stack red bowl on black bowl", src: "images/droid_05.mp4", thumb: "images/thumbs/droid_05.jpg" },
+          { label: "Hang the cloth", src: "images/droid_06.mp4", thumb: "images/thumbs/droid_06.jpg" },
+          { label: "Move object to the white box", src: "images/droid_07.mp4", thumb: "images/thumbs/droid_07.jpg" },
+          { label: "Move purple toy to white dish", src: "images/droid_08.mp4", thumb: "images/thumbs/droid_08.jpg" },
+          { label: "Move white object into container", src: "images/droid_09.mp4", thumb: "images/thumbs/droid_09.jpg" },
+          { label: "Move lid on pot", src: "images/droid_10.mp4", thumb: "images/thumbs/droid_10.jpg" }
         ]
       },
       "gallery-videogen": {
@@ -254,11 +273,16 @@
           { key: "wan14b", title: "WAN-14B" }
         ],
         items: [
-          { label: "A flamingo dips its beak into the water while walking to the right", thumb: "images/thumbs/vg_flamingo_das.jpg", das: "images/vg_flamingo_das.mp4", cogvideo: "images/vg_flamingo_cogvideo.mp4", wan14b: "images/vg_flamingo_wan14b.mp4" },
-          { label: "Take the round light brown plate from the table", thumb: "images/thumbs/vg_plate_das.jpg", das: "images/vg_plate_das.mp4", cogvideo: "images/vg_plate_cogvideo.mp4", wan14b: "images/vg_plate_wan14b.mp4" },
-          { label: "Little pigs walk to the big pig", thumb: "images/thumbs/vg_pigs_das.jpg", das: "images/vg_pigs_das.mp4", cogvideo: "images/vg_pigs_cogvideo.mp4", wan14b: "images/vg_pigs_wan14b.mp4" },
-          { label: "Pick up the red spatula from the plate", thumb: "images/thumbs/vg_spatula_das.jpg", das: "images/vg_spatula_das.mp4", cogvideo: "images/vg_spatula_cogvideo.mp4", wan14b: "images/vg_spatula_wan14b.mp4" },
-          { label: "A person rides an escalator up to the second floor", thumb: "images/thumbs/vg_escalator_das.jpg", das: "images/vg_escalator_das.mp4", cogvideo: "images/vg_escalator_cogvideo.mp4", wan14b: "images/vg_escalator_wan14b.mp4" }
+          { label: "A flamingo dips its beak into the water while walking to the right", thumb: "images/thumbs/vg_01.jpg", das: "images/vg_01_das.mp4", cogvideo: "images/vg_01_cogvideo.mp4", wan14b: "images/vg_01_wan14b.mp4" },
+          { label: "Take the round light brown plate from the table", thumb: "images/thumbs/vg_02.jpg", das: "images/vg_02_das.mp4", cogvideo: "images/vg_02_cogvideo.mp4", wan14b: "images/vg_02_wan14b.mp4" },
+          { label: "Pick up the white ceramic cup from the table", thumb: "images/thumbs/vg_03.jpg", das: "images/vg_03_das.mp4", cogvideo: "images/vg_03_cogvideo.mp4", wan14b: "images/vg_03_wan14b.mp4" },
+          { label: "Put down the red and green can on the table", thumb: "images/thumbs/vg_04.jpg", das: "images/vg_04_das.mp4", cogvideo: "images/vg_04_cogvideo.mp4", wan14b: "images/vg_04_wan14b.mp4" },
+          { label: "Pick up the red spatula from the plate", thumb: "images/thumbs/vg_05.jpg", das: "images/vg_05_das.mp4", cogvideo: "images/vg_05_cogvideo.mp4", wan14b: "images/vg_05_wan14b.mp4" },
+          { label: "Take the red bottle from the bowl", thumb: "images/thumbs/vg_06.jpg", das: "images/vg_06_das.mp4", cogvideo: "images/vg_06_cogvideo.mp4", wan14b: "images/vg_06_wan14b.mp4" },
+          { label: "Little pigs walk to the big pig", thumb: "images/thumbs/vg_07.jpg", das: "images/vg_07_das.mp4", cogvideo: "images/vg_07_cogvideo.mp4", wan14b: "images/vg_07_wan14b.mp4" },
+          { label: "The surfer backs up", thumb: "images/thumbs/vg_08.jpg", das: "images/vg_08_das.mp4", cogvideo: "images/vg_08_cogvideo.mp4", wan14b: "images/vg_08_wan14b.mp4" },
+          { label: "A person rides an escalator up to the second floor", thumb: "images/thumbs/vg_09.jpg", das: "images/vg_09_das.mp4", cogvideo: "images/vg_09_cogvideo.mp4", wan14b: "images/vg_09_wan14b.mp4" },
+          { label: "A train moves to the right", thumb: "images/thumbs/vg_10.jpg", das: "images/vg_10_das.mp4", cogvideo: "images/vg_10_cogvideo.mp4", wan14b: "images/vg_10_wan14b.mp4" }
         ]
       }
     };
@@ -274,16 +298,24 @@
       if (!root) return;
       const tabs = document.createElement("div");
       tabs.className = "gallery-tabs";
+      const tabsRow = document.createElement("div");
+      tabsRow.className = "gallery-tabs-row";
+      tabs.appendChild(tabsRow);
       const stage = document.createElement("div");
       stage.className = "gallery-stage";
       root.append(tabs, stage);
 
       function show(i) {
-        Array.from(tabs.children).forEach((b, j) => b.classList.toggle("active", j === i));
+        Array.from(tabsRow.children).forEach((b, j) => b.classList.toggle("active", j === i));
         const item = cfg.items[i];
         let html = '<p class="stage-prompt">&ldquo;' + item.label + '&rdquo;</p>';
         if (cfg.type === "single") {
           html += '<div class="stage-single">' + vid(item.src, item.zoom) + "</div>";
+        } else if (cfg.type === "pair") {
+          html += '<div class="vid-compare two">' +
+            '<figure class="vid-col"><p class="vid-method">Input RGB</p>' + vid(item.rgb) + "</figure>" +
+            '<figure class="vid-col"><p class="vid-method">Annotated 3D point tracks</p>' + vid(item.track) + "</figure>" +
+            "</div>";
         } else {
           html += '<div class="vid-compare">' + cfg.methods.map(m =>
             '<figure class="vid-col' + (m.best ? " best" : "") + '">' +
@@ -302,7 +334,7 @@
         b.setAttribute("aria-label", it.label);
         b.innerHTML = '<img src="' + it.thumb + '" alt="" loading="lazy">';
         b.addEventListener("click", () => show(i));
-        tabs.appendChild(b);
+        tabsRow.appendChild(b);
       });
       show(0);
     }

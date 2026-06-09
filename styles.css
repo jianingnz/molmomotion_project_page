@@ -34,7 +34,6 @@ body {
   color: var(--ai2-text);
   padding: 76px 24px 44px;
   text-align: center;
-  border-bottom: 1px solid rgba(16, 47, 42, 0.08);
 }
 .hero-inner { max-width: 880px; margin: 0 auto; }
 
@@ -414,26 +413,34 @@ figure video {
 }
 /* thumbnail selector strip (edit-by-track style) */
 .gallery-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  align-items: center;
+  max-width: 100%;
+  overflow-x: auto;         /* scroll to the other examples on narrow screens */
   margin-bottom: 26px;
 }
+/* inner row: width = content, auto-margins center it when it fits,
+   and collapse to the left (1st pinned) when it overflows -> scrollable */
+.gallery-tabs-row {
+  display: flex;
+  flex-wrap: nowrap;        /* always one line */
+  gap: 5px;
+  align-items: center;
+  width: max-content;
+  margin: 0 auto;
+}
 .gallery-tab {
+  flex: 0 0 auto;
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
   border: none;
-  border-radius: 9px;
+  border-radius: 8px;
   background: transparent;
   line-height: 0;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 .gallery-tab img {
   display: block;
-  width: 88px;
-  height: 56px;            /* fixed box -> uniform size & ratio for every thumbnail */
+  width: 80px;
+  height: 50px;            /* fixed box -> uniform size & ratio for every thumbnail */
   object-fit: cover;        /* crop to fill the box instead of keeping native ratio */
   border-radius: 5px;
   background: var(--ai2-cream-2);
@@ -454,3 +461,25 @@ figure video {
 }
 /* video-gen "ours" highlight now sits on the crop wrapper */
 .vid-col.best .crop { box-shadow: 0 0 0 3px var(--ai2-accent); }
+
+/* ===== Training-data pair: equal-size, centered cells ===== */
+#gallery-trainingdata .vid-compare.two { align-items: start; }
+#gallery-trainingdata .crop {
+  overflow: hidden;
+  border-radius: 8px;
+  line-height: 0;
+  background: var(--ai2-cream-2);
+}
+#gallery-trainingdata .crop video {
+  width: 100%;
+  margin-left: 0;            /* drop the left-crop for this gallery */
+  height: 300px;
+  object-fit: contain;       /* show full frame, centered horizontally & vertically */
+  background: var(--ai2-cream-2);
+  border-radius: 0;
+}
+#gallery-trainingdata .vid-method { margin-bottom: 14px; }
+#gallery-trainingdata .gallery-stage { margin-bottom: 8px; }
+@media (max-width: 640px) {
+  #gallery-trainingdata .crop video { height: 220px; }
+}
